@@ -69,7 +69,7 @@ app.post('/post/create', (req,res) => {
 })
 
 app.post('/blog/create', (req,res) => {
-    const sql = `INSERT INTO blogs(blog_id, title, owner_name, category)
+    const sql = `INSERT INTO blogs(title, owner_name, category)
                 VALUES ('${req.body.title}', '${req.body.currentUser}', '${req.body.category}');
                 `
     db.query(sql, (err,data) => {
