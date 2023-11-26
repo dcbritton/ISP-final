@@ -1,0 +1,347 @@
+body {
+    font-family: 'Times New Roman', serif; 
+    background-color: #f5f5f5; 
+    color: #333333;
+    margin: 0px;
+}
+
+/* navbar */
+.NavBar {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fffaf0; 
+    border: 1px solid #ccc;
+    display: flex;
+    min-height: 50px;
+    position: sticky;       
+    top: 0;
+    align-items: center;
+}
+
+.Logo {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+.SiteTitle {
+    font-size: 24px;
+    font-style: bold;
+    margin-right: 20px;
+}
+
+.SearchBar {
+    border: 1px solid lightgrey ;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 3px;
+    display: flex;
+
+    border: 2px solid black;
+    overflow: hidden;
+    max-width: 500px;
+    min-width: 500px;
+}
+
+.FilterGroup {
+    display: flex;
+}
+
+.Filter {
+    background-color: lightgrey;
+    color:#333333;
+    border-radius: 3px;
+    font-size: 16px;
+    display: flex;
+    margin-right: 5px;
+}
+
+.FilterXButton {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+}
+
+.FilterXButton:hover {
+    background-color: rgb(0,0,0,.2);
+}
+
+.SubInput {
+    border: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color:#333333; 
+    min-width: 20px;
+    margin-right: 5px;
+}
+
+.SubInput:focus {
+    outline: none;
+
+}
+
+.ProfileIcon {
+    margin-left: auto;
+    min-width: 50px;
+    min-height: 50px;
+
+    border-radius: 100%;
+    justify-self: right;
+}
+
+/* login page */
+.Login {
+    margin-top: 10%;
+    padding: 40px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #3d3d3d;
+    font-size: 20px; 
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginUsername {
+    border: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color:#555555;
+    font-family: 'Times New Roman', serif;
+    min-height: 30px;
+    min-width: 160px;
+    border-radius: 5px;
+}
+
+.LoginPassword {
+    border: none;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    color:#555555;
+    min-height: 30px;
+    min-width: 160px;
+    border-radius: 5px;
+}
+
+.FormSwapLink {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.LoginButton {
+    font-size: 20px;
+    min-width: 70px;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Times New Roman', serif;
+}
+
+/* non-navbar */
+.BelowNavBar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* content e.g. feed, blog, sidebar */
+.Content {
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    overflow: scroll;
+}
+
+/* title card for blogs only */
+.TitleCard {
+    margin: 10px;
+    padding: 20px;
+    padding-bottom: 0px;
+    font-size: 40px;
+}
+
+.TitleCardFooter {
+    font-size: 16px;
+    color:#777777
+}
+
+/* this exists in feed even though there is no title card. for uniformity */
+.BelowTitleCard {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* side bar stuff */
+.SideBarCard {
+    margin: 10px;   
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    background-color: #fffaf0; 
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    min-width: 250px;
+    align-items: center;
+}
+
+.NewBlogButton {
+    margin-top: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f5f5f5; 
+    color: #333333;
+    padding: 10px;
+}
+
+.NewBlogButton:hover {
+    background-color: #e0e0e0;
+}
+
+.NewBlogInput {
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #f5f5f5; 
+    color: #333333;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.NewBlogInput:focus {
+    outline: none;
+}
+
+.NewBlogFormButtonContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.NewBlogFormButton {
+    margin: 5px;
+    margin-top: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f5f5f5; 
+    color: #333333;
+    padding: 5px;
+}
+
+.NewBlogFormButton:hover {
+    background-color: #e0e0e0;
+}
+
+/* post cards */
+.PostCard {
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    background-color: #fffaf0;
+    border: 1px solid #ccc;
+    font-size: 16px; 
+    height: fit-content;
+    min-width: 616px;
+}
+
+.PostCard-Title {
+    color: #333333; 
+    margin-bottom: 8px;
+    margin-top: 0px;
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+.PostCard-Content {
+    color: #555555; /* Slightly lighter grey for content */
+    font-size: 16px; /* Readable font size */
+    line-height: 1.6; /* Adequate line spacing for readability */
+    height: fit-content;
+}
+
+.PostCard-Footer {
+    margin-top: 15px; /* Space above the footer */
+    font-size: 14px; /* Slightly smaller font for meta info */
+    color: #777777; /* Light grey for footer */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.PostEdit {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+    color: #555555; /* Slightly lighter grey for content */
+    font-size: 16px; /* Readable font size */
+    line-height: 1.6; /* Adequate line spacing for readability */
+    background-color: #fffaf0;
+    border: none;
+    resize: none;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0px;
+    height: 500px;
+}
+
+.PostEdit:focus {
+    outline: none;
+}
+
+.TitleEdit {
+    font-size: 20px; 
+    font-weight: bold;
+    color: #333333; 
+    margin: 0px;
+    width: 100%;
+    background-color: #fffaf0;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0px;
+    overflow-wrap: normal;
+}
+
+.TitleEdit:focus {
+    outline: none;
+}
+
+.FooterButtonContainer{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.BlogCardButton {
+    margin-right: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 4px;
+}
+
+.BlogCardButton:hover {
+    background-color: rgb(0,0,0,.2);
+}
