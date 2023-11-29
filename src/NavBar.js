@@ -2,22 +2,34 @@ import React from "react";
 import './styles.css';
 import Logo from './img/logo.png'
 import ProfileIcon from './img/profile.svg'
-import { useNavigate } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import SearchBar from "./SearchBar";
 
-function NavBar({CurrentUser}) {
-    let navigate = useNavigate()
-    function handleProfileClick() {
-        navigate('/login')
-    }
+function NavBar({CurrentUser, DoLogoutStuff, SetSearchFilters}) {
+    const location = useLocation()
 
     return (
         <div className="NavBar">
-            <img className="Logo" src={Logo} alt=""/>
-            <div className="SiteTitle">Oxymoronomicon</div>
-            <SearchBar/>
-            <div className="ProfileIcon" onClick={handleProfileClick}><img src={ProfileIcon} alt=""/></div>
+            <Link to="/"><img className="Logo" src={Logo} alt=""/></Link>
+            <div className="SiteTitle"><b>PastExchange</b></div>
+            {location.pathname === '/' && <SearchBar SetSearchFilters={SetSearchFilters}/>}
+            
+            <div class="dropdown">
+                <img className="ProfileIcon" src={ProfileIcon} alt=""/>
+                {CurrentUser ? 
+                <div class="dropdown-options">
+                    <Link className='dropdown-option' to='/blogs'>Your Blogs</Link>
+                    <Link className='dropdown-option' to='/likes'>Your Likes</Link>
+                    <Link className='dropdown-option' onClick={DoLogoutStuff}>Logout</Link>
+                </div>
+                :
+                <div class="dropdown-options">
+                    <Link className='dropdown-option' to='/login'>Login</Link>
+                </div>
+                }
+            </div>
 
+            
         </div>
     );
 }

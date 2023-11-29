@@ -36,7 +36,7 @@ function Login({DoLoginStuff}) {
             <input className='LoginUsername' type="text" onChange={e => setUsername(e.target.value)} />
             Password
             <input className='LoginPassword' type="password" onChange={e => setPassword(e.target.value)} />
-            <Link className='FormSwapLink' to='/'>Need an account?</Link>
+            <Link className='FormSwapLink' to='/register'>Need an account?</Link>
             <button className='LoginButton' onClick={handleLogin}>Sign In</button>
         </div>
     );

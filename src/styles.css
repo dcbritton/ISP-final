@@ -1,7 +1,7 @@
 body {
     font-family: 'Times New Roman', serif; 
-    background-color: #f5f5f5; 
-    color: #333333;
+    background-color: #2B2B2B; 
+    color: #d8d8d8; 
     margin: 0px;
 }
 
@@ -11,8 +11,8 @@ body {
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #fffaf0; 
-    border: 1px solid #ccc;
+    background-color: #181818; 
+    border: 1px solid #222222;
     display: flex;
     min-height: 50px;
     position: sticky;       
@@ -33,17 +33,18 @@ body {
 }
 
 .SearchBar {
-    border: 1px solid lightgrey ;
+    margin-left: 50px;
+    border: 2px solid #555555;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
     font-size: 20px;
     border-radius: 3px;
     display: flex;
 
-    border: 2px solid black;
     overflow: hidden;
-    max-width: 500px;
-    min-width: 500px;
+    max-width: 600px;
+    min-width: 600px;
+    min-height: 20px;
 }
 
 .FilterGroup {
@@ -66,6 +67,7 @@ body {
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .FilterXButton:hover {
@@ -76,41 +78,126 @@ body {
     border: none;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
-    color:#333333; 
+    color:#d8d8d8; 
     min-width: 20px;
     margin-right: 5px;
 }
 
 .SubInput:focus {
     outline: none;
+}
 
+/* filter and search buttons*/
+.SearchIcon {
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 4px;
+    
+}
+
+.SearchIcon:hover {
+    background-color: rgb(255,255,255,.15);
+    cursor: pointer;
+}
+
+.FilterDropDown {
+    margin-left: 20px;
+    position: relative;
+}
+
+.dropdown-options {
+    display: none; /* hide until hover*/
+    position: absolute;
+    right: 0;
+    background-color:#181818; 
+    border-radius:5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    min-width: 125px;
+}
+
+.FilterDropDown:hover .dropdown-options {
+    display: block; /* now display */
+}
+
+.dropdown-option {
+    right: 0;
+    display: block;
+    color: #d8d8d8; 
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.dropdown-option:hover {
+    background-color: #121212;
+}
+
+/* source for this dropdown system: https://www.freecodecamp.org/news/html-drop-down-menu-how-to-add-a-drop-down-list-with-the-select-element/ */
+.dropdown {
+    margin-left: auto;
+    position: relative;
 }
 
 .ProfileIcon {
     margin-left: auto;
-    min-width: 50px;
-    min-height: 50px;
-
-    border-radius: 100%;
-    justify-self: right;
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 4px;
+    
 }
 
-/* login page */
-.Login {
+.ProfileIcon:hover {
+    background-color: rgb(255,255,255,.15);
+    cursor: pointer;
+}
+
+.dropdown-options {
+    display: none; /* hide until hover*/
+    position: absolute;
+    right: 0;
+    background-color:#181818; 
+    border-radius:5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    min-width: 125px;
+}
+
+.dropdown:hover .dropdown-options {
+    display: block; /* now display */
+}
+
+.dropdown-option {
+    right: 0;
+    display: block;
+    color: #d8d8d8; 
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.dropdown-option:hover {
+    background-color: #121212;
+}
+
+/* login & register pages */
+.Login, .Register {
     margin-top: 10%;
     padding: 40px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    background-color: #3d3d3d;
+    background-color: #181818;
     font-size: 20px; 
-    color: white;
+    color: #d8d8d8; 
 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.LoginUsername {
+.LoginUsername, .RegisterUsername, .RegisterEmail  {
     border: none;
     margin-bottom: 20px;
     font-size: 16px;
@@ -119,9 +206,10 @@ body {
     min-height: 30px;
     min-width: 160px;
     border-radius: 5px;
+    
 }
 
-.LoginPassword {
+.LoginPassword, .RegisterPassword {
     border: none;
     margin-bottom: 20px;
     font-family: 'Times New Roman', serif;
@@ -138,13 +226,19 @@ body {
     margin-bottom: 20px;
 }
 
-.LoginButton {
+.LoginButton, .RegisterButton {
     font-size: 20px;
     min-width: 70px;
     min-height: 30px;
     border: none;
     border-radius: 5px;
     font-family: 'Times New Roman', serif;
+    background-color: #f5f5f5;
+}
+
+.LoginButton:hover, .RegisterButton:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 /* non-navbar */
@@ -154,20 +248,42 @@ body {
     padding: 20px;
 }
 
+.PageButtonContainer {
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.PageButton {
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #181818;
+}
+
+.PageButton:hover {
+    background-color: rgba(255,255,255,.15);
+    cursor: pointer;
+}
+
 /* content e.g. feed, blog, sidebar */
 .Content {
     margin: 10px;
     padding: 20px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     max-width: 1000px;
-    overflow: scroll;
+    overflow: hidden    ;
 }
 
 /* title card for blogs only */
 .TitleCard {
     margin: 10px;
     padding: 20px;
+    margin-top: 0px;
+    padding-top: 0px;
     padding-bottom: 0px;
     font-size: 40px;
 }
@@ -177,11 +293,12 @@ body {
     color:#777777
 }
 
-/* this exists in feed even though there is no title card. for uniformity */
 .BelowTitleCard {
     display: flex;
     justify-content: center;
     padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* side bar stuff */
@@ -190,8 +307,8 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
     border-radius: 10px;
-    background-color: #fffaf0; 
-    border: 1px solid #ccc;
+    background-color: #181818; 
+    border: 1px solid #222222;
     display: flex;
     flex-direction: column;
     max-width: 250px;
@@ -213,6 +330,7 @@ body {
 
 .NewBlogButton:hover {
     background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 .NewBlogInput {
@@ -251,6 +369,7 @@ body {
 
 .NewBlogFormButton:hover {
     background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 /* post cards */
@@ -260,25 +379,32 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
     border-radius: 10px;
-    background-color: #fffaf0;
-    border: 1px solid #ccc;
+    background-color: #181818;
+    border: 1px solid #222222;
     font-size: 16px; 
     height: fit-content;
     min-width: 616px;
 }
 
 .PostCard-Title {
-    color: #333333; 
+    color: #d8d8d8; 
     margin-bottom: 8px;
     margin-top: 0px;
+    cursor: pointer;
+    transition-duration: 500ms;
+}
+
+.PostCard-Title:hover {
+    background-color: #151515;
+    border-radius: 4px;
 }
 
 hr {
-    border: 1px solid lightgrey;
+    border: 1px solid #222222;
 }
 
 .PostCard-Content {
-    color: #555555; /* Slightly lighter grey for content */
+    color:  #d8d8d8;; /* Slightly lighter grey for content */
     font-size: 16px; /* Readable font size */
     line-height: 1.6; /* Adequate line spacing for readability */
     height: fit-content;
@@ -297,10 +423,10 @@ hr {
     margin-top: 8px;
     margin-bottom: 16px;
     width: 100%;
-    color: #555555; /* Slightly lighter grey for content */
+    color: #d8d8d8; /* Slightly lighter grey for content */
     font-size: 16px; /* Readable font size */
     line-height: 1.6; /* Adequate line spacing for readability */
-    background-color: #fffaf0;
+    background-color: #181818;
     border: none;
     resize: none;
     font-family: 'Times New Roman', Times, serif;
@@ -315,10 +441,10 @@ hr {
 .TitleEdit {
     font-size: 20px; 
     font-weight: bold;
-    color: #333333; 
+    color: #d8d8d8; 
     margin: 0px;
     width: 100%;
-    background-color: #fffaf0;
+    background-color: #181818;
     border: none;
     font-family: 'Times New Roman', Times, serif;
     padding: 0px;
@@ -343,5 +469,34 @@ hr {
 }
 
 .BlogCardButton:hover {
-    background-color: rgb(0,0,0,.2);
+    background-color: rgba(255,255,255,.15);
+    cursor: pointer;
+}
+
+/* misc for Likes and YourBlogs */
+.PostCardsContainer-Liked {
+    max-width: 650px;
+}
+
+.YourBlogsContent {
+    margin: 10px;
+    padding: 20px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    overflow: scroll;
+}
+
+.YourBlogCard {
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    background-color: #181818;
+    border: 1px solid #222222;
+    font-size: 16px; 
+    height: fit-content;
+    min-width: 200px;
 }

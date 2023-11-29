@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 function NewBlogForm({CurrentUser}) {
     const [Form, SetForm] = useState()
     const [Title, SetTitle] = useState('')
     const [Category, SetCategory] = useState('')
+    const navigate = useNavigate()
 
     function ToggleForm() {
         SetForm(!Form)
@@ -26,7 +28,7 @@ function NewBlogForm({CurrentUser}) {
         let status = responseData.status
         responseData = await responseData.json()
         if(status === 200) {
-            ToggleForm()
+            navigate('/blogs')
         }
         else {
             // change form innerhtml?

@@ -12,7 +12,6 @@ function Blog({CurrentUser}) {
     const [ BlogPosts, SetBlogPosts] = useState([])
 
     useEffect(() => {
-        console.log("logged in as", CurrentUser,"visiting blog",blog_id)
 
         async function fetchBlogData() {
             const URL = `http://localhost:8080/blog/${blog_id}/data`
