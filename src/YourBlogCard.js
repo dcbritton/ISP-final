@@ -17,7 +17,7 @@ function FeedCard({ blog_data }) {
             <hr/>
             <div className="PostCard-Footer">
                 {/* makes a nicely formattable Date object out of the ISO 8601 format that 'post_data.created_at' contains*/}
-                <span>Posted: <b>{(new Date(blog_data.created_at)).toLocaleString()}</b></span>
+                <span>Since: <b>{(new Date(blog_data.created_at)).toLocaleString()}</b></span>
             </div>
         </div>
     );
