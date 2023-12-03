@@ -59,7 +59,6 @@ function SearchBar({SetSearchFilters}) {
                     <div className='dropdown-option' onClick={() => HandleDropdownSelect('author')}>author</div>
                     <div className='dropdown-option' onClick={() => HandleDropdownSelect('title')}>title</div>
                     <div className='dropdown-option' onClick={() => HandleDropdownSelect('content')}>content</div>
-                    <div className='dropdown-option' onClick={() => HandleDropdownSelect('category')}>category</div>
                 </div>
             </div>
             <button className='BlogCardButton' onClick={HandleSearch}><img src={SearchIcon} alt=''/></button>

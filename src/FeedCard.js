@@ -70,8 +70,12 @@ function FeedCard({ post_data, CurrentUser }) {
                 {/* makes a nicely formattable Date object out of the ISO 8601 format that 'post_data.created_at' contains*/}
                 <span>Posted: <b>{(new Date(post_data.created_at)).toLocaleString()}</b> by <b>{post_data.owner_name}</b></span>
                 <div className="FooterButtonContainer">
-                    <span>{LikeCount}</span>
-                    <button className="BlogCardButton"><img src ={Liked ? LikedIcon : LikeIcon} alt="" onClick={ToggleLike}/></button>
+                    {CurrentUser && 
+                        <>
+                            <span>{LikeCount}</span>
+                            <button className="BlogCardButton"><img src ={Liked ? LikedIcon : LikeIcon} alt="" onClick={ToggleLike}/></button>
+                        </>
+                    }
                 </div>
             </div>
         </div>

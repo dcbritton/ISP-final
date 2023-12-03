@@ -40,7 +40,7 @@ function Register() {
             Password
             <input className='RegisterPassword' type="password" onChange={e => setPassword(e.target.value)} />
             Email
-            <input className='RegisterEmail' type="email" onChange={e => setEmail(e.target.value)} /> {/* Optional: Email input */}
+            <input className='RegisterEmail' type="email" onChange={e => setEmail(e.target.value)} /> 
             <Link className='FormSwapLink' to='/login'>Already have an account?</Link>
             <button className='RegisterButton' onClick={handleRegister}>Sign Up</button>
         </div>

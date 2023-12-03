@@ -117,8 +117,12 @@ function BlogCard({ post_data, CurrentUser }) {
                             <button className="BlogCardButton"><img src={Editing ? DoneIcon : EditIcon} alt="" onClick={ToggleEdit}/></button>
                         </>
                     }
-                    <span>{LikeCount}</span>
-                    <button className="BlogCardButton"><img src ={Liked ? LikedIcon : LikeIcon} alt="" onClick={ToggleLike}/></button>
+                    {CurrentUser && 
+                        <>
+                            <span>{LikeCount}</span>
+                            <button className="BlogCardButton"><img src ={Liked ? LikedIcon : LikeIcon} alt="" onClick={ToggleLike}/></button>
+                        </>
+                    }
                 </div>
             </div>
         </div>
